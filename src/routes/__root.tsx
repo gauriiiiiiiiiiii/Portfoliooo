@@ -76,27 +76,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       meta: [
         { charSet: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { title: "Nancy Kataria" },
+        { title: "Portfolio" },
         {
           name: "description",
           content:
-            "Modern portfolio website designed to showcase your skills, projects, and experience to recruiters.",
+            "Portfolio of Gauri Agarwal — aspiring software developer and final-year CS student at NIT Delhi. Projects, experience, and a hidden terminal mode.",
         },
-        { name: "author", content: "Nancy Kataria" },
-        { property: "og:title", content: "Nancy Kataria" },
+        { name: "author", content: "Gauri Agarwal" },
+        { property: "og:title", content: "Gauri Agarwal" },
         {
           property: "og:description",
           content:
-            "Modern portfolio website designed to showcase your skills, projects, and experience to recruiters.",
+            "Aspiring software developer. I build things that matter — thoughtful. scalable. real.",
         },
         { property: "og:type", content: "website" },
         { name: "twitter:card", content: "summary" },
-        { name: "twitter:site", content: "Nancy Kataria" },
-        { name: "twitter:title", content: "Nancy Kataria" },
+        { name: "twitter:site", content: "Gauri Agarwal" },
+        { name: "twitter:title", content: "Gauri Agarwal" },
         {
           name: "twitter:description",
           content:
-            "Modern portfolio website designed to showcase your skills, projects, and experience to recruiters.",
+            "Aspiring software developer. I build things that matter — thoughtful. scalable. real.",
         },
         {
           property: "og:image",

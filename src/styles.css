@@ -126,4 +126,37 @@
   /* Terminal scrollbar */
   .term-scroll::-webkit-scrollbar { width: 8px; }
   .term-scroll::-webkit-scrollbar-thumb { background: oklch(0.4 0.01 250); border-radius: 4px; }
+
+  /* Timeline self-draw animation */
+  .timeline-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: var(--border);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .timeline-line.visible { transform: scaleY(1); }
+
+  /* Contribution chart fill-in */
+  @keyframes chart-reveal {
+    from { clip-path: inset(0 100% 0 0); }
+    to   { clip-path: inset(0 0% 0 0); }
+  }
+  .chart-reveal { animation: chart-reveal 2s ease-out forwards; }
+
+  /* Scroll progress bar */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: var(--accent);
+    z-index: 9999;
+    transition: width 80ms linear;
+    pointer-events: none;
+  }
 }

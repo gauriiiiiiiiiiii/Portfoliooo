@@ -5,7 +5,7 @@ import {
   experience,
   education,
   skills,
-} from "@/data/resume";
+} from "@/data/profile";
 
 type Line = { kind: "in" | "out" | "sys"; text: string };
 
@@ -44,7 +44,7 @@ function fmtProjects() {
 }
 function fmtEdu() {
   return education
-    .map((e) => `  ${e.degree}\n    ${e.school} · ${e.period} · ${e.detail}`)
+    .map((e) => `  ${e.degree}\n    ${e.school} · ${e.period}${e.details.length ? " · " + e.details.join(" · ") : ""}`)
     .join("\n\n");
 }
 
@@ -61,9 +61,9 @@ const COMMANDS: Record<string, () => string> = {
     `  email     ${profile.email}\n  location  ${profile.location}`,
   socials: () =>
     `  github    ${profile.github}\n  linkedin  ${profile.linkedin}`,
-  whoami: () => "guest@nancy.dev",
+  whoami: () => "guest@gauri.dev",
   ls: () => "about  skills  experience  projects  education  contact  socials",
-  pwd: () => "/home/nancy/portfolio",
+  pwd: () => "/home/gauri/portfolio",
   date: () => new Date().toString(),
   echo: () => "",
 
@@ -86,12 +86,13 @@ const COMMANDS: Record<string, () => string> = {
   hi: () => "hello, fellow human (or bot, no judgement).",
 };
 
-const BANNER = `  _   _                       _  __     _             _      
- | \\ | | __ _ _ __   ___ _   _| |/ /__ _| |_ __ _ _ __(_) __ _ 
- |  \\| |/ _\` | '_ \\ / __| | | | ' // _\` | __/ _\` | '__| |/ _\` |
- | |\\  | (_| | | | | (__| |_| | . \\ (_| | || (_| | |  | | (_| |
- |_| \\_|\\__,_|_| |_|\\___|\\__, |_|\\_\\__,_|\\__\\__,_|_|  |_|\\__,_|
-                         |___/                                  
+const BANNER = `   ____    _    _   _ ____  ___
+  / ___|  / \\  | | | |  _ \\|_ _|
+ | |  _  / _ \\ | | | | |_) || |
+ | |_| |/ ___ \\| |_| |  _ < | |
+  \\____/_/   \\_\\\\___/|_| \\_\\___|
+
+  Aspiring Software Developer · NIT Delhi
 `;
 
 export function Terminal({
@@ -199,7 +200,7 @@ export function Terminal({
           <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
           <span className="h-3 w-3 rounded-full bg-[#28c840]" />
           <div className="flex-1 text-center font-mono-ui text-xs text-white/60">
-            nancy — -zsh — 80×24
+            gauri — -zsh — 80×24
           </div>
           <div className="w-12" />
         </div>
@@ -227,7 +228,7 @@ export function Terminal({
               {l.kind === "in" ? (
                 <>
                   <span style={{ color: "var(--terminal-prompt)" }}>
-                    nancy@portfolio
+                    gauri@portfolio
                   </span>
                   <span style={{ color: "var(--terminal-dim)" }}> ~ </span>
                   <span style={{ color: "var(--terminal-accent)" }}>$ </span>
@@ -241,7 +242,7 @@ export function Terminal({
 
           <form onSubmit={onSubmit} className="flex items-center">
             <span style={{ color: "var(--terminal-prompt)" }}>
-              nancy@portfolio
+              gauri@portfolio
             </span>
             <span style={{ color: "var(--terminal-dim)" }}>&nbsp;~&nbsp;</span>
             <span style={{ color: "var(--terminal-accent)" }}>$&nbsp;</span>
