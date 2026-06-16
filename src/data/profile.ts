@@ -11,7 +11,7 @@ export const profile = {
   portfolio: "https://portfolioo-five-blond.vercel.app/",
   // Resume
   resume:
-    "https://drive.google.com/file/d/1VQCHBaiz1XiNgzl5uzEP39b9ZMxbQyJd/view?usp=sharing",
+    "https://drive.google.com/file/d/1rekTnbkr1ZLhulOkb2vyRkExY0D5FDcL/view?usp=drive_link",
 };
 
 export const projects = [
