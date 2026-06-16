@@ -427,7 +427,7 @@ function Index() {
                   />
                 ))}
               </span>
-              <span>366+ contributions in the last year · always shipping</span>
+              <span>400+ contributions in the last year · always shipping</span>
               <a
                 href={profile.github}
                 target="_blank"
